@@ -1,5 +1,3 @@
-executar()
-
 // 0 - Adicionar evento em botão para executar contexto da função
 async function executar(){
     // 1 - Pegar o valor digitado input (id do personagem)
