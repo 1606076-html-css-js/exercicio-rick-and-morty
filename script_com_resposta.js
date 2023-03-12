@@ -2,15 +2,20 @@
 async function executar(){
     console.log("Iniciando...")
     // 1 - Pegar o valor digitado input (id do personagem)
-    const id = 1 // ! Substituir pelo valor do INPUT capturado em tela!
+    const elementoInput = document.getElementById("idPersonagem")
+    const id = elementoInput.value // ! Substituir pelo valor do INPUT !
     // 2 - Buscar personagem da API (já está pronto)
     const personagem = await buscarPersonagemDaAPI(id)
     // console.log(personagem)
 
     /* MONTAR ABAIXO HTML COM O VALOR RETORNADO DA API */
     // 3 - Pegar elemento de resultado do HTML
+    const elementoImg = document.getElementById("imgPersonagem")
+    const elementoNome = document.getElementById("nomePersonagem")
     // 4 - Atribuir valores do personagem na tela
     // 4.1 - Mudar o atributo src da tag img
+    elementoImg.src = personagem.image
+    elementoNome.innerHTML = personagem.name
     // 4.2 - Mudar o atributo innerText da tag que guarda o nome do personagem
 
     /* Dica:
